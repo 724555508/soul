@@ -32,6 +32,7 @@ import org.dromara.soul.web.influxdb.entity.MonitorDO;
 import org.dromara.soul.web.plugin.AbstractSoulPlugin;
 import org.dromara.soul.web.plugin.SoulPluginChain;
 import org.dromara.soul.web.request.RequestDTO;
+import org.dromara.soul.web.support.HostAddressUtils;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
@@ -91,8 +92,8 @@ public class MonitorPlugin extends AbstractSoulPlugin {
                 .count(1)
                 .module(requestDTO.getModule())
                 .method(requestDTO.getMethod())
-                .ip(exchange.getRequest().getRemoteAddress().getAddress().getHostAddress())
-                .host(exchange.getRequest().getRemoteAddress().getHostString())
+                .ip(HostAddressUtils.acquireIp(exchange))
+                .host(HostAddressUtils.acquireHost(exchange))
                 .elapsedTime(Duration.between(LocalDateTime.now(), requestDTO.getStartDateTime()).toMillis())
                 .build();
     }

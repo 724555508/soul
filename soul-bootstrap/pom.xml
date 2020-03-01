@@ -29,6 +29,8 @@
 
     <artifactId>soul-bootstrap</artifactId>
 
+	
+
     <dependencies>
 
         <dependency>
@@ -77,11 +79,11 @@
             <version>2.7.5</version>
         </dependency>
 
-        <dependency>
+       <!--  <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-registry-nacos</artifactId>
             <version>2.7.5</version>
-        </dependency>
+        </dependency> -->
 
         <!-- Keep latest Nacos client version -->
         <dependency>
@@ -108,7 +110,19 @@
 
         <!--dubbo end-->
 
+
+
+		 <dependency>
+      		<groupId>io.netty</groupId>
+      		<artifactId>netty-all</artifactId>
+      		<version>4.1.36.Final</version>
+    	</dependency>
+    	
+    	
+    	
     </dependencies>
+
+
 
     <!--多环境 Maven profile整合Spring profile-->
     <profiles>
@@ -139,6 +153,7 @@
 
     <build>
         <finalName>soul-bootstrap</finalName>
+        <defaultGoal>compile</defaultGoal>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

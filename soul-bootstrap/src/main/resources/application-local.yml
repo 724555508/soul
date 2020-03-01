@@ -16,7 +16,7 @@ soul :
     sync:
         strategy: websocket
         websocket :
-             url: ws://localhost:9095/websocket
+             url: ws://123.57.141.60:9095/websocket
 #        zookeeper:
 #             url: localhost:2181
 #             sessionTimeout: 5000

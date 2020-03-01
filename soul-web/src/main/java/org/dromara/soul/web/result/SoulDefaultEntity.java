@@ -37,7 +37,7 @@ public class SoulDefaultEntity implements Serializable {
 
     private Integer code;
 
-    private String message;
+    private String msg;
 
     private Object data;
 
@@ -58,7 +58,7 @@ public class SoulDefaultEntity implements Serializable {
     public SoulDefaultEntity(final Integer code, final String message, final Object data) {
 
         this.code = code;
-        this.message = message;
+        this.msg = message;
         this.data = data;
     }
 

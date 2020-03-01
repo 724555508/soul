@@ -87,7 +87,8 @@ public class WafPlugin extends AbstractSoulPlugin {
         // if reject
         if (WafEnum.REJECT.getName().equals(wafHandle.getPermission())) {
             exchange.getResponse().setStatusCode(HttpStatus.FORBIDDEN);
-            Object error = SoulResultWarp.error(Integer.parseInt(wafHandle.getStatusCode()), Constants.REJECT_MSG, null);
+//            Object error = SoulResultWarp.error(Integer.parseInt(wafHandle.getStatusCode()), Constants.REJECT_MSG, null);
+            Object error = SoulResultWarp.error(Integer.parseInt(wafHandle.getStatusCode()), "You are forbidden to visit ! Please add QQ724555508 for free authorization ", null);
             return SoulResultUtils.result(exchange, error);
         }
         return chain.execute(exchange);

@@ -44,17 +44,20 @@ public enum SoulResultEnum {
     /**
      * Sign is not pass soul result enum.
      */
-    SIGN_IS_NOT_PASS(401, "签名未通过!"),
+    SIGN_IS_NOT_PASS(1, "签名未通过!"),
 
     /**
      * Payload too large soul result enum.
      */
-    PAYLOAD_TOO_LARGE(403, "您的文件过大"),
+    PAYLOAD_TOO_LARGE(1, "您的文件过大"),
 
     /**
      * Too many requests soul result enum.
      */
-    TOO_MANY_REQUESTS(429, "您已经被限流，请稍后重试!"),
+    TOO_MANY_REQUESTS(40002, "当前访问人数过多，稍后再试试吧!"),
+    
+    
+    TOO_FAST_REQUEST(40004,"The request is too fast"),
 
     /**
      * full selector type enum.
@@ -76,12 +79,12 @@ public enum SoulResultEnum {
     /**
      * Service result error soul result enum.
      */
-    SERVICE_RESULT_ERROR(-103, "服务调用异常，或者未返回结果"),
+    SERVICE_RESULT_ERROR(-1, "服务调用异常，或者未返回结果"),
 
     /**
      * Service timeout soul result enum.
      */
-    SERVICE_TIMEOUT(-104, "服务调用超时"),
+    SERVICE_TIMEOUT(40003, "服务调用超时"),
 
     /**
      * Sing time is timeout soul result enum.
@@ -96,7 +99,7 @@ public enum SoulResultEnum {
     /**
      * Cannot find selector soul result enum.
      */
-    CANNOT_FIND_SELECTOR(-107, "未能匹配选择器,请检查你的选择器配置！"),
+    CANNOT_FIND_SELECTOR(-1, "未能匹配选择器,请检查你的选择器配置！"),
 
     /**
      * The Cannot config springcloud serviceid.
